@@ -1,4 +1,5 @@
 resource "aws_scheduler_schedule" "ec2-start-schedule" {
+  count = 0
   name = "recsys-ec2-start-schedule"
   
   flexible_time_window {
@@ -22,6 +23,7 @@ resource "aws_scheduler_schedule" "ec2-start-schedule" {
 }
 
 resource "aws_scheduler_schedule" "ec2-stop-schedule" {
+  count = 0
   name = "recsys-ec2-stop-schedule"
   
   flexible_time_window {
