@@ -23,14 +23,13 @@ resource "aws_scheduler_schedule" "ec2-start-schedule" {
 }
 
 resource "aws_scheduler_schedule" "ec2-stop-schedule" {
-  count = 0
   name = "recsys-ec2-stop-schedule"
   
   flexible_time_window {
     mode = "OFF"
   }
 
-  schedule_expression = "cron(0 6 * * ? *)" # Run at 6:00 am every day
+  schedule_expression = "cron(0 23 * * ? *)" # Run at 6:00 am every day
   schedule_expression_timezone = "America/Sao_Paulo"
   description = "Stop instances event"
 
